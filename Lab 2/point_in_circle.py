@@ -1,14 +1,17 @@
-import math
-
-x_center, y_center = map(int, input("Enter center of circle (x y): ").split())
+x_center = int(input("Enter x-coordinate of the circle center: "))
+y_center = int(input("Enter y-coordinate of the circle center: "))
 radius = int(input("Enter radius of the circle: "))
-x, y = map(int, input("Enter point (x y): ").split())
+x = int(input("Enter x-coordinate of the point: "))
+y = int(input("Enter y-coordinate of the point: "))
 
-distance = math.sqrt((x - x_center) ** 2 + (y - y_center) ** 2)
+# Calculate squared distance without math.sqrt
+distance_squared = (x - x_center) * (x - x_center) + (y - y_center) * (y - y_center)
+radius_squared = radius * radius
 
-if distance < radius:
+# Compare the squared values to avoid using square root
+if distance_squared < radius_squared:
     print("The point is inside the circle")
-elif distance == radius:
+elif distance_squared == radius_squared:
     print("The point is on the circle")
 else:
     print("The point is outside the circle")
