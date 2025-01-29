@@ -5,4 +5,4 @@ def factorial(n):
     return result
 
 num = int(input("Enter a number: "))
-print("Factorial:", factorial(num))
+print("Factorial :", factorial(num))
