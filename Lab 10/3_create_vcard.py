@@ -1,14 +1,16 @@
+name = input("Enter your name: ")
+phone = input("Enter your phone number: ")
+email = input("Enter your email address: ")
 
-name = input("Enter name: ")
-phone = input("Enter phone number: ")
-email = input("Enter email: ")
+vcard = "BEGIN:VCARD\n"
+vcard += "VERSION:3.0\n"
+vcard += "FN:" + name + "\n"
+vcard += "TEL;TYPE=CELL:" + phone + "\n"
+vcard += "EMAIL:" + email + "\n"
+vcard += "END:VCARD"
 
-vcard = f"""BEGIN:VCARD
-VERSION:3.0
-FN:{name}
-TEL;TYPE=CELL:{phone}
-EMAIL:{email}
-END:VCARD"""
+f = open("contact.vcf", "w")
+f.write(vcard)
+f.close()
 
-with open("contact.vcf", "w") as f:
-    f.write(vcard)
+print("Contact saved to contact.vcf!")
