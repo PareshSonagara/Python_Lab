@@ -1,4 +1,3 @@
-
 import csv
 
 data = [
@@ -8,6 +7,7 @@ data = [
     [103, 'Charlie', 92, 88, 91]
 ]
 
-with open('students.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerows(data)
+F = open('students.csv', 'w', newline='')
+writer = csv.writer(F)
+writer.writerows(data)
+F.close()
